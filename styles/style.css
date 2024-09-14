@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h3 {
+    margin: 0;
+    color: #333;
+}
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+.nav-link::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    color: #ff6b6b;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+}
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 3vh 0;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+#exhibition{
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/15ca6b96-80b2-4887-9253-b0eb38160f16/dg0fbi8-b67b2241-1e76-4fd4-80c7-84b26a0a0925.jpg/v1/fill/w_1280,h_1280,q_75,strp/cubist_style_portrait_of_a_young_man_by_luigipetro_dg0fbi8-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE1Y2E2Yjk2LTgwYjItNDg4Ny05MjUzLWIwZWIzODE2MGYxNlwvZGcwZmJpOC1iNjdiMjI0MS0xZTc2LTRmZDQtODBjNy04NGIyNmEwYTA5MjUuanBnIiwiaGVpZ2h0IjoiPD0xMjgwIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvMTVjYTZiOTYtODBiMi00ODg3LTkyNTMtYjBlYjM4MTYwZjE2XC9sdWlnaXBldHJvLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19._FidAdXircVRemJ_BGoGB9_dB4ExXgMZtFUcZ4eNwIw');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #e0e0e0;
+}
+
+#gallery{
+    display: flex;
+    flex-direction: column;
+}
+
+art-card {
+    display: block;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.art-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-link {
+        padding: 1rem 2rem;
+    }
+    .nav-link::before{
+        content:none
+    }
+    .hamburger {
+        display: flex;
+    }
+}
